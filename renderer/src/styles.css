@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+.sidebar {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  background:  url("./resources/sidebar.jpeg");
+  background-size: cover;
+}
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: transparent;
+}
+.sidebar-nav ul {
+  list-style:  none;
+  padding: 10px 5px;
+}
+
+.sidebar-nav li button {
+  border: none;
+  color: lightgray;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  text-align: left; /* so it aligns like a link */
+  width: 100%; /* optional if you want full-width buttons */
+  background: transparent;
+}
+
+.sidebar-nav li button:hover {
+  color: #cfcfff;
+}
+.sidebar-nav li button.active {
+  color: #5e5eff;
+}
+
+.sidebar-footer {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: transparent;
+}
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  background: transparent;
+}
+.create-task-btn {
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: transparent;
+}
+.tasks-table {
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: transparent;
+}
+.tasks-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+.tasks-table th, .tasks-table td {
+  text-align: left;
+  padding: 0.5rem;
+  background: transparent;
+}
+.tasks-table th {
+  background: transparent;
+}
+.tasks-controls button {
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  background: transparent;
+}
+.tasks-controls button:hover {
+  color: lightgray;
+}
+/* This container holds the middle sidebar + tasks content side by side */
+.tasks-page-container {
+  display: flex;
+  flex: 1;          /* So it fills available space */
+}
+
+/* Container for the middle sidebar + main content side by side */
+.tasks-page-container {
+  display: flex;
+  flex: 1; /* Let it expand to fill parent's height if the parent is also flex */
+}
+
+.task-groups-sidebar {
+  width: 200px;
+  background: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: #fff;
+  border-right: 1px solid #2f2f2f;
+  height: 100vh; /* Full viewport height */
+}
+
+.task-groups-sidebar .sidebar-heading {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+/* The “+” create-group button just below heading */
+.create-group-btn {
+  background: #5e5eff;
+  border: none;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-bottom: 1rem; /* some spacing before the list */
+}
+
+/* The list of groups takes up remaining space and can scroll if needed */
+.task-groups-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.task-groups-sidebar li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.task-groups-sidebar li:hover {
+  color: #5e5eff;
+}
+/* Existing styles remain the same */
+.task-groups-sidebar {
+  width: 200px;
+  background: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: #fff;
+  border-right: 1px solid #2f2f2f;
+  height: 100vh;
+}
+
+/* Updated group item styles */
+.group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2a2a2a;
+  border-radius: 20px; /* Makes it oval shaped */
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.group-item:hover {
+  background: #333333;
+}
+
+.group-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.group-count {
+  color: #666;
+  font-size: 0.8em;
+}
+
+.remove-group-btn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.remove-group-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.create-group-btn {
+  background: #5e5eff;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.create-group-btn:hover {
+  background: #4b4bff;
+}
+
