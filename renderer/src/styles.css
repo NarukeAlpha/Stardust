@@ -157,9 +157,10 @@ body {
 .task-groups-sidebar li {
   display: flex;
   justify-content: space-between;
-  padding: 0.4rem 0;
+  padding: 0.4rem 0.8rem;
   font-size: 0.85rem;
   cursor: pointer;
+  align-content: end;
 }
 
 .task-groups-sidebar li:hover {

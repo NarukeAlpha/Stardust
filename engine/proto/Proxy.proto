@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "module/ProxyService";
+package ProxyService;
+
+service ProxyService{
+  rpc GetProxyGroups (PGListR) returns (PGListRp) {}
+}
+
+message PGListR{
+  string name = 1;
+}
+message PGListRp{
+  string message = 1;
+}
