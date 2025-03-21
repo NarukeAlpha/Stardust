@@ -1,20 +1,22 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Directory containing the .proto files
 PROTO_DIR="engine/proto"
 GO_OUT_DIR="."
 
-go build -o backend engine/backend.go
-echo "Backend built successfully."
+cd engine/proto || exit
+echo "Now in $(pwd)"
+ls
+
 # Check if the directory exists
-if [ ! -d "$PROTO_DIR" ]; then
+if [ ! -d "." ]; then
     echo "Error: Directory $PROTO_DIR does not exist."
     exit 1
 fi
 
 # Find and compile all .proto files in the directory
 echo "Searching for .proto files in $PROTO_DIR..."
-PROTO_FILES=$(find "$PROTO_DIR" -type f -name "*.proto")
+PROTO_FILES=$(find "." -type f -name "*.proto")
 
 if [ -z "$PROTO_FILES" ]; then
     echo "No .proto files found in $PROTO_DIR."
@@ -31,4 +33,8 @@ for FILE in $PROTO_FILES; do
     fi
 done
 
+cd ../../ || exit
+echo "Now in $(pwd)"
+go build -o backend /engine/backend.go 
+echo "Backend built successfully."
 echo "All .proto files compiled successfully."

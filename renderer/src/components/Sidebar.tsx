@@ -5,7 +5,7 @@ export default function Sidebar() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const isActive = (path) => location.pathname === path ? 'active' : '';
+    const isActive = (path: string): string => location.pathname === path ? 'active' : '';
 
     return (
         <div className="sidebar">
@@ -17,7 +17,23 @@ export default function Sidebar() {
                             onClick={() => navigate('/')}
                             className={isActive('/')}
                         >
-                            Tasks
+                            Chat
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            onClick={() => navigate('/flow')}
+                            className={isActive('/flow')}
+                        >
+                            Flow
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            onClick={() => navigate('/agents')}
+                            className={isActive('/agents')}
+                        >
+                            Agents
                         </button>
                     </li>
                     <li>
@@ -30,10 +46,10 @@ export default function Sidebar() {
                     </li>
                     <li>
                         <button
-                            onClick={() => navigate('/proxies')}
-                            className={isActive('/proxies')}
+                            onClick={() => navigate('/mcp')}
+                            className={isActive('/mcp')}
                         >
-                            Proxies
+                            MCP
                         </button>
                     </li>
                 </ul>
